@@ -5,5 +5,6 @@
 * [网易云方案分析](wangyiyun/wangyiyunPoint.md)
 * [加密](encrypt/signeEncypt.md)
   * [rsa](encrypt/rsa.md)
-* [我们的方案](plan/ourplan.md)
+* [方案](plan/ourplan.md)
+* [其他](canvas/canvasMsg.md)
 

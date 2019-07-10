@@ -37,6 +37,7 @@
     2 采用rsa加密 加密我们的randkey,
         rsa(key,c)
 ### 3传输请求
+
 ### 4后端操作
     1首先通过rsa解密，取出randkey，
     2通过key取出 进行一次ase解密，
