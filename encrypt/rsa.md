@@ -1,4 +1,9 @@
 ###rsa加密过程
+
+参考文档
+https://my.oschina.net/mywiki/blog/1613886
+
+rsa 是利用质数的一些性质进行的加密
 详细
 
 整体如下
