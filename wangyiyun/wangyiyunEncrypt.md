@@ -6,7 +6,7 @@
     区别在于密钥是否相同，加密和解密的密钥相同为对称加密，反之为非对称加密
     相比较对称加密而言，非对称加密安全性更高，但是加解密耗费的时间更长，速度慢。
 #####对称加密：
-    ASE加密（Advanced Encryption Standard）：通过密钥，两边都可以加密，解密
+    aes加密（Advanced Encryption Standard）：通过密钥，两边都可以加密，解密
 
 #####非对称加密：
     RSA: 非对称加密，含有一个公钥和一个私钥，公钥大家都可以持有，私钥需要服务端保存
@@ -16,19 +16,19 @@
 #####网易云前端最终会传出两个参数，一个是要传的加密之后的params信息，一个是用于解密的key
 ####1 网易云准备工作
 ##### 1 三个固定key（可以后端下发或者js更新）,分别如下：
-    ##### 用于ase首次加密的 a 
+    ##### 用于aes首次加密的 a 
     ##### 用于rsa加密的 指数b
     ##### 用于rsa加密的 公钥c 
 ##### 2 客户端js代码产生一个随机key
-    ##### 用于ase二次加密 randkey，
+    ##### 用于aes二次加密 randkey，
 ###2前端操作
 
 ####1 生成用加密的于传输的parms
     将我们要传输的参数进行json序列化生成为字符串 jsonStr
     1 jsonStr 和 a 进行加密 
-        即使ASE(jsonStr,a)
-    2 将1的加密结果 和randkey 进行ase加密 
-        即ASE(ASE(jsonStr,a),randkey)
+        即使aes(jsonStr,a)
+    2 将1的加密结果 和randkey 进行aes加密 
+        即aes(aes(jsonStr,a),randkey)
         这样我们就生成了 params 
 #### 2生成key
 
@@ -40,5 +40,5 @@
 
 ### 4后端操作
     1首先通过rsa解密，取出randkey，
-    2通过key取出 进行一次ase解密，
-    3然后通过固定的a进行进行二次ase解密，获取到json字符串，
+    2通过key取出 进行一次aes解密，
+    3然后通过固定的a进行进行二次aes解密，获取到json字符串，

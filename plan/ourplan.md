@@ -1,7 +1,7 @@
 ####分析：
 #####可以使用网易云加密方式，对我们的参数进行加密：
 
-    1 是ASE 的key 后段应该和前端相同，可以下发
+    1 是aes 的key 后段应该和前端相同，可以下发
 
     2 rsa的公钥和模数目是配对的，也可以进行下发
 
@@ -17,7 +17,7 @@
 
  整体逻辑就是：
 
-     ASE（ASE（params,key）randkey） + rsa(randkey)
+     aes（aes（params,key）randkey） + rsa(randkey)
 
     可以在此基础上进行混淆
 js,php代码
